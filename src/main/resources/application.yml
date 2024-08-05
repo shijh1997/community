@@ -4,7 +4,7 @@ server:
   servlet:
     context-path: /community
 
-# ThymeleafProperties
+# Thymeleaf
 spring:
   thymeleaf:
     cache: false  # 关闭thymeleaf的缓存，开发时最好关闭，项目上线后开启会减小服务器的压力
@@ -29,5 +29,12 @@ mybatis:
     useGeneratedKeys: true  # 使用数据库的自增长
     map-underscore-to-camel-case: true  # 使得数据库中的字段名和实体类中的属性名自动匹配起来
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 启用MyBatis SQL日志打印
+
+#logger
+logging:
+  level:
+    com.nowcoder.community: DEBUG
+  file:
+    name: D:/workspace/date/nowcoder/community.log
 
 
