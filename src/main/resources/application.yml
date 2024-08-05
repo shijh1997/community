@@ -1,0 +1,33 @@
+# ServerProperties
+server:
+  port: 8081
+  servlet:
+    context-path: /community
+
+# ThymeleafProperties
+spring:
+  thymeleaf:
+    cache: false  # 关闭thymeleaf的缓存，开发时最好关闭，项目上线后开启会减小服务器的压力
+
+  # DataSourceProperties
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/community?characterEncoding=utf-8&useSSL=false&serverTimezone=Hongkong&allowPublicKeyRetrieval=true
+    username: root
+    password: 1997928sjh
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 15
+      minimum-idle: 5
+      idle-timeout: 30000
+
+# MybatisProperties
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  # 映射文件存放的位置
+  type-aliases-package: com.nowcoder.community.entity  # 实体类的包名
+  configuration:
+    useGeneratedKeys: true  # 使用数据库的自增长
+    map-underscore-to-camel-case: true  # 使得数据库中的字段名和实体类中的属性名自动匹配起来
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 启用MyBatis SQL日志打印
+
+
